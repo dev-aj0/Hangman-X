@@ -1,5 +1,8 @@
 # Hangman X
 
+![image](https://github.com/user-attachments/assets/b9a084f3-1f63-4a79-87d3-9025fbb7d1c9)
+
+
 ## Overview
 
 Hangman X is a minimalist web-based version of the classic Hangman game. Players can choose categories, select difficulty levels, and guess letters to reveal hidden words. The game features a clean interface, responsive design, and interactive elements to enhance the user experience.
@@ -49,3 +52,6 @@ To get started with Hangman X, follow these steps:
 - Pick a difficulty level.
 - Guess letters to reveal the hidden word.
 - Keep track of your wrong guesses and try to avoid losing the game!
+
+![image](https://github.com/user-attachments/assets/4dcb7cef-40c8-41b0-b84c-4cdb170a3862)
+
