@@ -176,7 +176,7 @@ const Index = () => {
 
       {/* Created By text at bottom right */}
       <div className="fixed bottom-4 right-4 text-green text-sm font-semibold">
-        created by abhijay shandilya of x dev
+        created by x dev
       </div>
     </div>
   );
