@@ -19,53 +19,19 @@ const Index = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-6">
+    <div className="min-h-screen bg-background text-foreground p-6 mt-20">
+      {/* Author's Name */}
+      <div className="fixed top-4 left-4 text-white font-bold">
+        made by abhijay shandilya (x dev)
+      </div>
+
       <div className="flex justify-between items-center mb-8">
-        {gameState.screen === "menu" && (
-          <div className="relative">
-            <Button
-              variant="outline"
-              size="lg"
-              className={`button-hover w-32 h-24 sm:w-40 sm:h-28 bg-background/95 ${selectedMode === "random" ? 'ring-2 ring-primary font-bold' : ''}`}
-              onClick={() => setSelectedMode("random")}
-            >
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-base sm:text-xl">Random Mode</span>
-              </div>
-            </Button>
-            {selectedMode === "random" && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="absolute inset-0 flex items-center justify-center rounded-md"
-              >
-                <div className="flex gap-4 p-4 bg-black rounded-md w-[180px]">
-                  {(Object.keys(DIFFICULTY) as Array<keyof typeof DIFFICULTY>).map((diff) => (
-                    <Button
-                      key={diff}
-                      variant="ghost"
-                      size="sm"
-                      className="text-lg font-bold hover:bg-[#333333] min-w-[40px] text-white hover:text-white flex items-center justify-center"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        startGame("random", diff);
-                      }}
-                    >
-                      {diff}
-                    </Button>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </div>
-        )}
         <div className="flex items-center gap-4">
           <HelpPopup />
           <ThemeToggle />
         </div>
       </div>
-      
+
       <AnimatePresence mode="wait">
         {gameState.screen === "menu" ? (
           <motion.div
@@ -77,13 +43,13 @@ const Index = () => {
           >
             <div className="space-y-8">
               <motion.h1 
-                className="text-4xl sm:text-7xl font-bold text-center sm:mt-[-80px] mt-0"
+                className="text-4xl sm:text-7xl font-bold text-center mt-6" // Adjusted margin-top for the heading
                 initial={{ y: -20 }}
                 animate={{ y: 0 }}
               >
                 Hangman X
               </motion.h1>
-              
+
               <div className="relative max-w-md mx-auto">
                 <Input
                   type="text"
@@ -94,10 +60,53 @@ const Index = () => {
                 />
               </div>
 
+              {/* Random Mode Button */}
+              <div className="w-full flex justify-center mt-6">
+                <Button
+                  variant="outline"
+                  className={`relative button-hover w-full sm:w-[900px] h-32 text-lg flex items-center justify-center p-4 bg-background/95 ${
+                    selectedMode === "random" ? 'ring-2 ring-primary font-bold' : ''
+                  }`}
+                  onClick={() => setSelectedMode(selectedMode === "random" ? null : "random")}
+                >
+                  <span className="text-sm sm:text-xl font-semibold text-center">Random Mode</span>
+
+                  {/* Difficulty Selector */}
+                  <AnimatePresence>
+                    {selectedMode === "random" && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        className="absolute inset-0 flex flex-col items-center justify-center"
+                      >
+                        <div className="flex gap-4 p-4 bg-black rounded-md w-[20%]">
+                          {(Object.keys(DIFFICULTY) as Array<keyof typeof DIFFICULTY>).map((diff) => (
+                            <Button
+                              key={diff}
+                              variant="ghost"
+                              size="sm"
+                              className="text-lg font-bold hover:bg-[#333333] min-w-[40px] text-white hover:text-white flex items-center justify-center"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                startGame("random", diff);
+                              }}
+                            >
+                              {diff}
+                            </Button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </Button>
+              </div>
+
+              {/* Categories List */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
                 {filteredCategories.map((category) => {
                   const isSelected = selectedMode === category;
-                  
+
                   return (
                     <div key={category} className="relative">
                       <Button
@@ -114,7 +123,7 @@ const Index = () => {
                         }}
                       >
                         <span className="text-sm sm:text-xl font-semibold text-center">{category}</span>
-                        
+
                         {isSelected && (
                           <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}

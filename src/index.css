@@ -46,19 +46,6 @@
     background: linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%);
   }
 
-  .water-theme {
-    --background: 206 33% 96%;
-    --foreground: 0 0% 100%;
-    --primary: 200 98% 39%;
-    --primary-foreground: 206 33% 96%;
-    --secondary: 200 98% 49%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 200 98% 59%;
-    --muted-foreground: 0 0% 100%;
-    --accent: 199 89% 48%;
-    --accent-foreground: 206 33% 96%;
-    background: linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
-  }
 
   .forest-theme {
     --background: 139 70% 75%;
@@ -117,11 +104,6 @@
   .forest-theme .theme-search-icon {
     @apply text-emerald-300;
   }
-
-  .water-theme .theme-search-icon {
-    @apply text-blue-300;
-  }
-
   .sunset-theme .theme-search-icon {
     @apply text-amber-300;
   }
@@ -143,4 +125,10 @@
 .draw-animation {
   stroke-dasharray: 100;
   animation: draw-line 0.5s ease forwards;
+}
+
+@layer utilities {
+  .backdrop-blur-md {
+    backdrop-filter: blur(10px);
+  }
 }
