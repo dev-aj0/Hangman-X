@@ -96,8 +96,6 @@ const Index = () => {
                 </Button>
               </div>
 
-
-
               {/* Categories List */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
                 {filteredCategories.map((category) => {
@@ -175,6 +173,11 @@ const Index = () => {
           />
         )}
       </AnimatePresence>
+
+      {/* Created By text at bottom right */}
+      <div className="fixed bottom-4 right-4 text-green text-sm font-semibold">
+        created by abhijay shandilya of x dev
+      </div>
     </div>
   );
 };
