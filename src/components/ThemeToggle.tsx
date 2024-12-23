@@ -45,10 +45,6 @@ export function ThemeToggle() {
           <Candy className="mr-2 h-4 w-4" />
           Candy
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleThemeChange('water-theme', <Droplet className="h-[1.2rem] w-[1.2rem]" />)}>
-          <Droplet className="mr-2 h-4 w-4" />
-          Water
-        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleThemeChange('sunset-theme', <Sunset className="h-[1.2rem] w-[1.2rem]" />)}>
           <Sunset className="mr-2 h-4 w-4" />
           Sunset
