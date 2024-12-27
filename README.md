@@ -5,11 +5,12 @@
 
 Hangman X is a minimalist and interactive Hangman game built with React, Vite, and Tailwind CSS. The game allows users to guess letters to reveal a hidden word while keeping track of their wrong guesses. It features multiple themes and a responsive design.
 
+Try it out here: https://hangman-x.netlify.app/
+
 ## Table of Contents
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Themes](#themes)
 - [License](#license)
@@ -30,36 +31,6 @@ Hangman X is a minimalist and interactive Hangman game built with React, Vite, a
 - **TypeScript**: A typed superset of JavaScript for better development experience.
 - **Framer Motion**: For animations and transitions.
 - **React Router**: For routing within the application.
-
-## Installation
-
-To get started with Hangman X, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/hangman-x.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd hangman-x
-   ```
-
-3. Install the dependencies:
-
-   ```bash
-   npm install
-   ```
-
-4. Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-5. Open your browser and go to `http://localhost:8080` to play the game.
 
 ## Usage
 
